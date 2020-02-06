@@ -13,6 +13,7 @@
 		5B2AB9A123EB4A8A005592F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AB9A023EB4A8A005592F4 /* Assets.xcassets */; };
 		5B2AB9A423EB4A8A005592F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AB9A223EB4A8A005592F4 /* LaunchScreen.storyboard */; };
 		5B4AF5FA23EBB23F00F584AB /* AppointmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4AF5F923EBB23F00F584AB /* AppointmentCell.swift */; };
+		5B4AF5FC23EC9FB600F584AB /* NewTaskBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4AF5FB23EC9FB600F584AB /* NewTaskBtn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5B2AB9A323EB4A8A005592F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B2AB9A523EB4A8A005592F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B4AF5F923EBB23F00F584AB /* AppointmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentCell.swift; sourceTree = "<group>"; };
+		5B4AF5FB23EC9FB600F584AB /* NewTaskBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskBtn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		5B2AB98B23EB4A8A005592F4 = {
 			isa = PBXGroup;
 			children = (
+				5B4AF5F723EB562300F584AB /* SupportingFiles */,
 				5B2AB99623EB4A8A005592F4 /* CalendarApp */,
 				5B2AB99523EB4A8A005592F4 /* Products */,
 			);
@@ -57,7 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				5B2AB99B23EB4A8A005592F4 /* ViewController.swift */,
-				5B4AF5F723EB562300F584AB /* SupportingFiles */,
 				5B4AF5F823EB56C100F584AB /* View */,
 				5B2AB9A023EB4A8A005592F4 /* Assets.xcassets */,
 				5B2AB9A523EB4A8A005592F4 /* Info.plist */,
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				5B4AF5F923EBB23F00F584AB /* AppointmentCell.swift */,
+				5B4AF5FB23EC9FB600F584AB /* NewTaskBtn.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				5B2AB99823EB4A8A005592F4 /* AppDelegate.swift in Sources */,
 				5B2AB99A23EB4A8A005592F4 /* SceneDelegate.swift in Sources */,
 				5B4AF5FA23EBB23F00F584AB /* AppointmentCell.swift in Sources */,
+				5B4AF5FC23EC9FB600F584AB /* NewTaskBtn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

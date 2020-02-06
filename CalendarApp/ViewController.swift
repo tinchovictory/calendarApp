@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     private let appointmentsModel = ["Make changes to the new site design", "Upload Sketch to Zepelin", "Try new icon set", "Start making user flow for a new mobile application", "Make changes to the old site design"]
     
     private var appointmentsTable: UICollectionView!
+    private var newAppointmentBtn: NewTaskBtn!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +33,28 @@ class ViewController: UIViewController {
         
         self.view.addSubview(appointmentsTable)
         
+        self.newAppointmentBtn = NewTaskBtn(type: .system)
+        self.newAppointmentBtn.translatesAutoresizingMaskIntoConstraints = false
+        self.newAppointmentBtn.addTarget(self, action: #selector(addNewTask(sender:)), for: .touchUpInside)
+        self.view.addSubview(newAppointmentBtn)
+        
+        
         appointmentsTable.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             appointmentsTable.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20),
             appointmentsTable.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -20),
-            appointmentsTable.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             appointmentsTable.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 20),
+            
+            newAppointmentBtn.topAnchor.constraint(equalTo: appointmentsTable.bottomAnchor, constant: 20),
+            newAppointmentBtn.rightAnchor.constraint(equalTo: appointmentsTable.rightAnchor),
+            newAppointmentBtn.leftAnchor.constraint(equalTo: appointmentsTable.leftAnchor),
+            newAppointmentBtn.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
         ])
+    }
+    
+    
+    @objc private func addNewTask(sender: UIButton) {
+        print("Add new task")
     }
 
 
