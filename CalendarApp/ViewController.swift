@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let appointmentsModel = ["Appointment 1", "Appointment 2", "Appointment 3"]
+    let appointmentsModel = ["Make changes to the new site design", "Upload Sketch to Zepelin", "Try new icon set", "Start making user flow for a new mobile application", "Make changes to the old site design"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +23,11 @@ class ViewController: UIViewController {
         self.view.backgroundColor = .white
         
         let appointmentsTable = UITableView()
+        appointmentsTable.separatorStyle = .none
+//        appointmentsTable.alwaysBounceVertical = false
         appointmentsTable.delegate = self
         appointmentsTable.dataSource = self
-        appointmentsTable.register(UITableViewCell.self, forCellReuseIdentifier: "appointmentCell")
+        appointmentsTable.register(AppointmentCell.self, forCellReuseIdentifier: "appointmentCell")
         
         self.view.addSubview(appointmentsTable)
         
@@ -43,6 +45,11 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("row \(indexPath.row) selected")
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }
 
 extension ViewController: UITableViewDataSource {
@@ -51,8 +58,8 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "appointmentCell", for: indexPath)
-        cell.textLabel?.text = appointmentsModel[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "appointmentCell", for: indexPath) as! AppointmentCell
+//        cell.textLabel?.text = appointmentsModel[indexPath.row]
         return cell
     }
     
