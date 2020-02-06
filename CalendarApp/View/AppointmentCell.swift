@@ -8,10 +8,31 @@
 
 import UIKit
 
-class AppointmentCell: UITableViewCell {
+class AppointmentCell: UICollectionViewCell {
     
+    var title = "" {
+        didSet {
+            titleLbl.text = title
+        }
+    }
+    
+    var date = "" {
+        didSet {
+            dateLbl.text = date
+        }
+    }
+    
+    var time = "" {
+        didSet {
+            timeLbl.text = time
+        }
+    }
+    
+    
+    
+
     // Top title
-    private let title: UILabel = {
+    private let titleLbl: UILabel = {
         let label = UILabel()
         label.text = "Start making user flow for a new mobile application"
         label.font = UIFont.boldSystemFont(ofSize: 17)
@@ -24,7 +45,7 @@ class AppointmentCell: UITableViewCell {
     }()
    
     // Bottom left date
-    private let date: UILabel = {
+    private let dateLbl: UILabel = {
         let label = UILabel()
         label.text = "18 NOV 2020"
         label.font = UIFont.systemFont(ofSize: 12)
@@ -37,7 +58,7 @@ class AppointmentCell: UITableViewCell {
     }()
    
     // Bottom right time
-    private let time: UILabel = {
+    private let timeLbl: UILabel = {
         let label = UILabel()
         label.text = "11:00 - 13:00"
         label.font = UIFont.systemFont(ofSize: 12)
@@ -48,38 +69,39 @@ class AppointmentCell: UITableViewCell {
         
         return label
     }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        contentView.layer.cornerRadius = 10
+        contentView.clipsToBounds = true
+        contentView.layer.borderColor = UIColor(red: 0.95, green: 0.95, blue: 0.96, alpha: 1.0).cgColor
+        contentView.layer.borderWidth = 3
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-        self.layer.cornerRadius = 10
-        self.clipsToBounds = true
-        self.layer.borderColor = UIColor(red: 0.95, green: 0.95, blue: 0.96, alpha: 1.0).cgColor
-        self.layer.borderWidth = 3
-
-        self.addSubview(title)
-        self.addSubview(date)
-        self.addSubview(time)
+        contentView.addSubview(titleLbl)
+        contentView.addSubview(dateLbl)
+        contentView.addSubview(timeLbl)
         
         setupLayout()
     }
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            title.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
-            title.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-//            title.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            title.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            titleLbl.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+            titleLbl.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            titleLbl.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             
-            date.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 10),
-            date.leadingAnchor.constraint(equalTo: title.leadingAnchor),
-            date.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15),
+            dateLbl.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: 10),
+            dateLbl.leadingAnchor.constraint(equalTo: titleLbl.leadingAnchor),
+            dateLbl.heightAnchor.constraint(equalToConstant: 20),
+            dateLbl.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
 
-            time.topAnchor.constraint(equalTo: date.topAnchor),
-            time.trailingAnchor.constraint(equalTo: title.trailingAnchor),
-            time.bottomAnchor.constraint(equalTo: date.bottomAnchor),
-            time.leadingAnchor.constraint(equalTo: date.trailingAnchor, constant: 10)
+            timeLbl.topAnchor.constraint(equalTo: dateLbl.topAnchor),
+            timeLbl.trailingAnchor.constraint(equalTo: titleLbl.trailingAnchor),
+            timeLbl.bottomAnchor.constraint(equalTo: dateLbl.bottomAnchor),
+            timeLbl.leadingAnchor.constraint(equalTo: dateLbl.trailingAnchor, constant: 10)
         ])
+        
     }
     
     required init?(coder: NSCoder) {

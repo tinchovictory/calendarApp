@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let appointmentsModel = ["Make changes to the new site design", "Upload Sketch to Zepelin", "Try new icon set", "Start making user flow for a new mobile application", "Make changes to the old site design"]
+    private let appointmentsModel = ["Make changes to the new site design", "Upload Sketch to Zepelin", "Try new icon set", "Start making user flow for a new mobile application", "Make changes to the old site design"]
+    
+    private var appointmentsTable: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +24,11 @@ class ViewController: UIViewController {
         self.view = UIView()
         self.view.backgroundColor = .white
         
-        let appointmentsTable = UITableView()
-        appointmentsTable.separatorStyle = .none
-//        appointmentsTable.alwaysBounceVertical = false
-        appointmentsTable.delegate = self
-        appointmentsTable.dataSource = self
-        appointmentsTable.register(AppointmentCell.self, forCellReuseIdentifier: "appointmentCell")
+        self.appointmentsTable = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
+        self.appointmentsTable.backgroundColor = .white
+        self.appointmentsTable.delegate = self
+        self.appointmentsTable.dataSource = self
+        self.appointmentsTable.register(AppointmentCell.self, forCellWithReuseIdentifier: "appointmentCell")
         
         self.view.addSubview(appointmentsTable)
         
@@ -43,25 +44,38 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("row \(indexPath.row) selected")
-        tableView.deselectRow(at: indexPath, animated: true)
+extension ViewController: UICollectionViewDelegate {
+        
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("item \(indexPath.row) slected")
     }
-    
+
 }
 
-extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension ViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return appointmentsModel.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "appointmentCell", for: indexPath) as! AppointmentCell
-//        cell.textLabel?.text = appointmentsModel[indexPath.row]
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "appointmentCell", for: indexPath) as! AppointmentCell
+        cell.title = appointmentsModel[indexPath.row]
         return cell
     }
-    
+
+}
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let appointment = appointmentsModel[indexPath.row]
+        
+        let appointmentTitleSize = CGSize(width: appointmentsTable.bounds.width - 40, height: CGFloat.greatestFiniteMagnitude)
+        let appointmentTitleAttr = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 17)]
+        
+        let estimateTitleSize = NSString(string: appointment).boundingRect(with: appointmentTitleSize, options: .usesLineFragmentOrigin, attributes: appointmentTitleAttr, context: nil)
+        
+        return CGSize(width: collectionView.bounds.width, height: estimateTitleSize.height + 30 + 30)
+    }
 }
 
