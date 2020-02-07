@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     private var appointmentsTable: UICollectionView!
     private var newAppointmentBtn: NewTaskBtn!
+    private var appointmentTitle: AppointmentsTitle!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,18 +31,21 @@ class ViewController: UIViewController {
         self.appointmentsTable.delegate = self
         self.appointmentsTable.dataSource = self
         self.appointmentsTable.register(AppointmentCell.self, forCellWithReuseIdentifier: "appointmentCell")
-        
+        self.appointmentsTable.translatesAutoresizingMaskIntoConstraints = false
+        self.appointmentsTable.alwaysBounceVertical = true
         self.view.addSubview(appointmentsTable)
         
         self.newAppointmentBtn = NewTaskBtn(type: .system)
         self.newAppointmentBtn.translatesAutoresizingMaskIntoConstraints = false
         self.newAppointmentBtn.addTarget(self, action: #selector(addNewTask(sender:)), for: .touchUpInside)
         self.view.addSubview(newAppointmentBtn)
-        
-        
-        appointmentsTable.translatesAutoresizingMaskIntoConstraints = false
+
+        self.appointmentTitle = AppointmentsTitle()
+        self.appointmentTitle.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(appointmentTitle)
+
         NSLayoutConstraint.activate([
-            appointmentsTable.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            appointmentsTable.topAnchor.constraint(equalTo: appointmentTitle.bottomAnchor, constant: 20),
             appointmentsTable.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -20),
             appointmentsTable.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 20),
             
@@ -49,6 +53,10 @@ class ViewController: UIViewController {
             newAppointmentBtn.rightAnchor.constraint(equalTo: appointmentsTable.rightAnchor),
             newAppointmentBtn.leftAnchor.constraint(equalTo: appointmentsTable.leftAnchor),
             newAppointmentBtn.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            
+            appointmentTitle.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            appointmentTitle.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -20),
+            appointmentTitle.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 20),
         ])
     }
     

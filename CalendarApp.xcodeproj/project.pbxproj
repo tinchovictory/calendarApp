@@ -14,6 +14,7 @@
 		5B2AB9A423EB4A8A005592F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AB9A223EB4A8A005592F4 /* LaunchScreen.storyboard */; };
 		5B4AF5FA23EBB23F00F584AB /* AppointmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4AF5F923EBB23F00F584AB /* AppointmentCell.swift */; };
 		5B4AF5FC23EC9FB600F584AB /* NewTaskBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4AF5FB23EC9FB600F584AB /* NewTaskBtn.swift */; };
+		5B8F798823ED0E8E009F79EA /* AppointmentsTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F798723ED0E8E009F79EA /* AppointmentsTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5B2AB9A523EB4A8A005592F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B4AF5F923EBB23F00F584AB /* AppointmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentCell.swift; sourceTree = "<group>"; };
 		5B4AF5FB23EC9FB600F584AB /* NewTaskBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskBtn.swift; sourceTree = "<group>"; };
+		5B8F798723ED0E8E009F79EA /* AppointmentsTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		5B4AF5F823EB56C100F584AB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5B8F798723ED0E8E009F79EA /* AppointmentsTitle.swift */,
 				5B4AF5F923EBB23F00F584AB /* AppointmentCell.swift */,
 				5B4AF5FB23EC9FB600F584AB /* NewTaskBtn.swift */,
 			);
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B8F798823ED0E8E009F79EA /* AppointmentsTitle.swift in Sources */,
 				5B2AB99C23EB4A8A005592F4 /* ViewController.swift in Sources */,
 				5B2AB99823EB4A8A005592F4 /* AppDelegate.swift in Sources */,
 				5B2AB99A23EB4A8A005592F4 /* SceneDelegate.swift in Sources */,
