@@ -33,6 +33,7 @@ class AppointmentListVC: UIViewController {
         self.appointmentsTable.register(AppointmentCell.self, forCellWithReuseIdentifier: "appointmentCell")
         self.appointmentsTable.translatesAutoresizingMaskIntoConstraints = false
         self.appointmentsTable.alwaysBounceVertical = true
+        self.appointmentsTable.showsVerticalScrollIndicator = false
         self.view.addSubview(appointmentsTable)
         
         self.newAppointmentBtn = NewTaskBtn(type: .system)
