@@ -18,6 +18,22 @@ class AppointmentGroupCell: UICollectionViewCell {
         }
     }
     
+    var groupColor: UIColor! {
+        didSet {
+            setBtnColors()
+        }
+    }
+    
+    var isGroupSelected: Bool = false {
+        didSet {
+            setBtnColors()
+        }
+    }
+   
+    
+    
+    // MARK: UI components
+    
     private let groupNameLbl: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -31,7 +47,6 @@ class AppointmentGroupCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         
         self.contentView.backgroundColor = UIColor(red: 0.2, green: 0.22, blue: 0.27, alpha: 1.0)
         self.contentView.layer.cornerRadius = 10
@@ -58,5 +73,17 @@ class AppointmentGroupCell: UICollectionViewCell {
             groupNameLbl.widthAnchor.constraint(equalToConstant: 30),
             groupNameLbl.heightAnchor.constraint(equalToConstant: 30),
         ])
+    }
+    
+    private func setBtnColors() {
+        if isGroupSelected {
+            groupNameLbl.textColor = .white
+            self.contentView.backgroundColor = groupColor
+            self.contentView.layer.shadowColor = groupColor.cgColor
+        } else {
+            groupNameLbl.textColor = groupColor
+            self.contentView.backgroundColor = UIColor(red: 0.2, green: 0.22, blue: 0.27, alpha: 1.0)
+            self.contentView.layer.shadowColor = UIColor.black.cgColor
+        }
     }
 }

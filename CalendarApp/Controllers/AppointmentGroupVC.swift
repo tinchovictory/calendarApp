@@ -13,6 +13,8 @@ class AppointmentGroupVC: UIViewController {
     private var groupsList: UICollectionView!
     
     private let groupsModel = ["Work", "Family", "School", "Personal"]
+    private let groupsColor = [RGBValue(red: 0.6, green: 0.39, blue: 0.89), RGBValue(red: 0.92, green: 0.73, blue: 0.37), RGBValue(red: 0.44, green: 0.75, blue: 0.81), RGBValue(red: 0.80, green: 0.49, blue: 0.36),]
+    private let selectedGroup = [true, false, false, false]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +59,14 @@ extension AppointmentGroupVC: UICollectionViewDataSource {
         
         if indexPath.row < groupsModel.count {
             cell.groupName = groupsModel[indexPath.row]
+            
+            let color = groupsColor[indexPath.row]
+            cell.groupColor = UIColor(red: CGFloat(color.r), green: CGFloat(color.g), blue: CGFloat(color.b), alpha: 1.0)
+
+            cell.isGroupSelected = selectedGroup[indexPath.row]
         } else {
             cell.groupName = "+"
+            cell.groupColor = UIColor.white
         }
 
         return cell
