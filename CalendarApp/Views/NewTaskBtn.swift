@@ -19,7 +19,7 @@ class NewTaskBtn: UIButton {
         
         self.backgroundColor = UIColor(red: 0.61, green: 0.4, blue: 0.89, alpha: 1.0)
         self.layer.cornerRadius = 10
-        let title = NSAttributedString(string: "+ ADD NEW TASK", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17), NSAttributedString.Key.foregroundColor: UIColor.white])
+        let title = NSAttributedString(string: "+ ADD NEW TASK", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15), NSAttributedString.Key.foregroundColor: UIColor.white])
         self.setAttributedTitle(title, for: .normal)
     }
     
