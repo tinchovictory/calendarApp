@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5B2AB99823EB4A8A005592F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AB99723EB4A8A005592F4 /* AppDelegate.swift */; };
 		5B2AB99A23EB4A8A005592F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AB99923EB4A8A005592F4 /* SceneDelegate.swift */; };
-		5B2AB99C23EB4A8A005592F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AB99B23EB4A8A005592F4 /* ViewController.swift */; };
+		5B2AB99C23EB4A8A005592F4 /* AppointmentListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2AB99B23EB4A8A005592F4 /* AppointmentListVC.swift */; };
 		5B2AB9A123EB4A8A005592F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AB9A023EB4A8A005592F4 /* Assets.xcassets */; };
 		5B2AB9A423EB4A8A005592F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AB9A223EB4A8A005592F4 /* LaunchScreen.storyboard */; };
 		5B4AF5FA23EBB23F00F584AB /* AppointmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4AF5F923EBB23F00F584AB /* AppointmentCell.swift */; };
@@ -21,7 +21,7 @@
 		5B2AB99423EB4A8A005592F4 /* CalendarApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2AB99723EB4A8A005592F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B2AB99923EB4A8A005592F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5B2AB99B23EB4A8A005592F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5B2AB99B23EB4A8A005592F4 /* AppointmentListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentListVC.swift; sourceTree = "<group>"; };
 		5B2AB9A023EB4A8A005592F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B2AB9A323EB4A8A005592F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B2AB9A523EB4A8A005592F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,8 +61,8 @@
 		5B2AB99623EB4A8A005592F4 /* CalendarApp */ = {
 			isa = PBXGroup;
 			children = (
-				5B2AB99B23EB4A8A005592F4 /* ViewController.swift */,
-				5B4AF5F823EB56C100F584AB /* View */,
+				5B8F798923ED1A4C009F79EA /* Controllers */,
+				5B4AF5F823EB56C100F584AB /* Views */,
 				5B2AB9A023EB4A8A005592F4 /* Assets.xcassets */,
 				5B2AB9A523EB4A8A005592F4 /* Info.plist */,
 			);
@@ -79,14 +79,22 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		5B4AF5F823EB56C100F584AB /* View */ = {
+		5B4AF5F823EB56C100F584AB /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				5B8F798723ED0E8E009F79EA /* AppointmentsTitle.swift */,
 				5B4AF5F923EBB23F00F584AB /* AppointmentCell.swift */,
 				5B4AF5FB23EC9FB600F584AB /* NewTaskBtn.swift */,
 			);
-			path = View;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5B8F798923ED1A4C009F79EA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5B2AB99B23EB4A8A005592F4 /* AppointmentListVC.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B8F798823ED0E8E009F79EA /* AppointmentsTitle.swift in Sources */,
-				5B2AB99C23EB4A8A005592F4 /* ViewController.swift in Sources */,
+				5B2AB99C23EB4A8A005592F4 /* AppointmentListVC.swift in Sources */,
 				5B2AB99823EB4A8A005592F4 /* AppDelegate.swift in Sources */,
 				5B2AB99A23EB4A8A005592F4 /* SceneDelegate.swift in Sources */,
 				5B4AF5FA23EBB23F00F584AB /* AppointmentCell.swift in Sources */,

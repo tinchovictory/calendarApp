@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AppointmentListVC: UIViewController {
     
     private let appointmentsModel = ["Make changes to the new site design", "Upload Sketch to Zepelin", "Try new icon set", "Start making user flow for a new mobile application", "Make changes to the old site design"]
     
@@ -68,7 +68,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UICollectionViewDelegate {
+extension AppointmentListVC: UICollectionViewDelegate {
         
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("item \(indexPath.row) slected")
@@ -76,7 +76,7 @@ extension ViewController: UICollectionViewDelegate {
 
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension AppointmentListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return appointmentsModel.count
     }
@@ -89,7 +89,7 @@ extension ViewController: UICollectionViewDataSource {
 
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension AppointmentListVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let appointment = appointmentsModel[indexPath.row]
