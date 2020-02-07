@@ -47,6 +47,18 @@ class AppointmentGroupVC: UIViewController {
 
 extension AppointmentGroupVC: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if indexPath.row < groupsModel.count {
+            let allCells = collectionView.visibleCells as! [AppointmentGroupCell]
+            
+            allCells.forEach { cell in cell.isGroupSelected = false }
+            
+            let cell = collectionView.cellForItem(at: indexPath) as! AppointmentGroupCell
+            cell.isGroupSelected = true
+        }
+    }
+    
 }
 
 extension AppointmentGroupVC: UICollectionViewDataSource {
