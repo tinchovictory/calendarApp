@@ -9,6 +9,13 @@
 import UIKit
 
 class AppointmentsTitle: UIView {
+    
+    var title: String = "Work" {
+        didSet {
+            titleLbl.text = title
+        }
+    }
+    
     private let headerLbl: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

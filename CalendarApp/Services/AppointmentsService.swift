@@ -55,6 +55,10 @@ class AppointmentsService {
         return getAppointments().count
     }
     
+    var appointmentGroup: AppointmentGroup {
+        return groups[selectedGroup]
+    }
+    
     init() {
         self.selectedGroup = 0
     }

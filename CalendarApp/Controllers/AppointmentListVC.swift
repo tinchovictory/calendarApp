@@ -10,8 +10,6 @@ import UIKit
 
 class AppointmentListVC: UIViewController {
     
-//    private let appointmentsModel = ["Make changes to the new site design", "Upload Sketch to Zepelin", "Try new icon set", "Start making user flow for a new mobile application", "Make changes to the old site design"]
-    
     private var appointmentsTable: UICollectionView!
     private var newAppointmentBtn: NewTaskBtn!
     private var appointmentTitle: AppointmentsTitle!
@@ -21,7 +19,6 @@ class AppointmentListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
 
     override func loadView() {
         self.view = UIView()
@@ -39,11 +36,14 @@ class AppointmentListVC: UIViewController {
         
         self.newAppointmentBtn = NewTaskBtn(type: .system)
         self.newAppointmentBtn.translatesAutoresizingMaskIntoConstraints = false
+        let groupColor = appointmentsService.appointmentGroup.color
+        self.newAppointmentBtn.backgroundColor = UIColor(red: CGFloat(groupColor.r), green: CGFloat(groupColor.g), blue: CGFloat(groupColor.b), alpha: 1.0)
         self.newAppointmentBtn.addTarget(self, action: #selector(addNewTask(sender:)), for: .touchUpInside)
         self.view.addSubview(newAppointmentBtn)
 
         self.appointmentTitle = AppointmentsTitle()
         self.appointmentTitle.translatesAutoresizingMaskIntoConstraints = false
+        self.appointmentTitle.title = appointmentsService.appointmentGroup.name
         self.view.addSubview(appointmentTitle)
 
         NSLayoutConstraint.activate([
@@ -68,7 +68,11 @@ class AppointmentListVC: UIViewController {
     }
 
     func reloadAppointmentsList() {
-        appointmentsTable.reloadData()
+        self.appointmentsTable.reloadData()
+        self.appointmentTitle.title = appointmentsService.appointmentGroup.name
+        
+        let groupColor = appointmentsService.appointmentGroup.color
+        self.newAppointmentBtn.backgroundColor = UIColor(red: CGFloat(groupColor.r), green: CGFloat(groupColor.g), blue: CGFloat(groupColor.b), alpha: 1.0)
     }
 
 }
