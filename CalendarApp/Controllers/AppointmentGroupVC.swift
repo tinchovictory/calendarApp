@@ -8,18 +8,20 @@
 
 import UIKit
 
+protocol AppointmentGroupDelegate: class {
+    func appointmentGroupDidChanged()
+}
+
 class AppointmentGroupVC: UIViewController {
     
     private var groupsList: UICollectionView!
     
-    private let groupsModel = ["Work", "Family", "School", "Personal"]
-    private let groupsColor = [RGBValue(red: 0.6, green: 0.39, blue: 0.89), RGBValue(red: 0.92, green: 0.73, blue: 0.37), RGBValue(red: 0.44, green: 0.75, blue: 0.81), RGBValue(red: 0.80, green: 0.49, blue: 0.36),]
-    private let selectedGroup = [true, false, false, false]
+    var appointmentsService: AppointmentsService!
+    
+    weak var appointmentGroupDelegate: AppointmentGroupDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     override func loadView() {
@@ -49,13 +51,20 @@ extension AppointmentGroupVC: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if indexPath.row < groupsModel.count {
+        if indexPath.row < appointmentsService.groupsCount {
+            appointmentsService.setSelectedGroup(withId: indexPath.row)
+            
             let allCells = collectionView.visibleCells as! [AppointmentGroupCell]
             
             allCells.forEach { cell in cell.isGroupSelected = false }
             
             let cell = collectionView.cellForItem(at: indexPath) as! AppointmentGroupCell
             cell.isGroupSelected = true
+            
+            // Update appointments
+            if let delegate = appointmentGroupDelegate {
+                delegate.appointmentGroupDidChanged()
+            }
         }
     }
     
@@ -63,19 +72,20 @@ extension AppointmentGroupVC: UICollectionViewDelegate {
 
 extension AppointmentGroupVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return groupsModel.count + 1
+        return appointmentsService.groupsCount + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppointmentGroupCell", for: indexPath) as! AppointmentGroupCell
         
-        if indexPath.row < groupsModel.count {
-            cell.groupName = groupsModel[indexPath.row]
+        if indexPath.row < appointmentsService.groupsCount {
+            let appointmentGroup = appointmentsService.appointmentGroup(at: indexPath.row)
+            cell.groupName = appointmentGroup.name
             
-            let color = groupsColor[indexPath.row]
+            let color = appointmentGroup.color
             cell.groupColor = UIColor(red: CGFloat(color.r), green: CGFloat(color.g), blue: CGFloat(color.b), alpha: 1.0)
 
-            cell.isGroupSelected = selectedGroup[indexPath.row]
+            cell.isGroupSelected = appointmentsService.isSelectedGroup(withId: appointmentGroup.id)
         } else {
             cell.groupName = "+"
             cell.groupColor = UIColor.white

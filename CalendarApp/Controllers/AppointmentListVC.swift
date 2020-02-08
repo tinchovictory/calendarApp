@@ -10,15 +10,16 @@ import UIKit
 
 class AppointmentListVC: UIViewController {
     
-    private let appointmentsModel = ["Make changes to the new site design", "Upload Sketch to Zepelin", "Try new icon set", "Start making user flow for a new mobile application", "Make changes to the old site design"]
+//    private let appointmentsModel = ["Make changes to the new site design", "Upload Sketch to Zepelin", "Try new icon set", "Start making user flow for a new mobile application", "Make changes to the old site design"]
     
     private var appointmentsTable: UICollectionView!
     private var newAppointmentBtn: NewTaskBtn!
     private var appointmentTitle: AppointmentsTitle!
+    
+    var appointmentsService: AppointmentsService!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
 
@@ -66,6 +67,9 @@ class AppointmentListVC: UIViewController {
         print("Add new task")
     }
 
+    func reloadAppointmentsList() {
+        appointmentsTable.reloadData()
+    }
 
 }
 
@@ -79,12 +83,16 @@ extension AppointmentListVC: UICollectionViewDelegate {
 
 extension AppointmentListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return appointmentsModel.count
+        return appointmentsService.appointmentsCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "appointmentCell", for: indexPath) as! AppointmentCell
-        cell.title = appointmentsModel[indexPath.row]
+       
+        let appointment = appointmentsService.appointment(at: indexPath.row)
+        cell.title = appointment.title
+        cell.time = "\(appointment.startTime):00 - \(appointment.endTime):00"
+        
         return cell
     }
 
@@ -93,12 +101,12 @@ extension AppointmentListVC: UICollectionViewDataSource {
 extension AppointmentListVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let appointment = appointmentsModel[indexPath.row]
+        let appointment = appointmentsService.appointment(at: indexPath.row)
         
         let appointmentTitleSize = CGSize(width: appointmentsTable.bounds.width - 40, height: CGFloat.greatestFiniteMagnitude)
         let appointmentTitleAttr = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 17)]
         
-        let estimateTitleSize = NSString(string: appointment).boundingRect(with: appointmentTitleSize, options: .usesLineFragmentOrigin, attributes: appointmentTitleAttr, context: nil)
+        let estimateTitleSize = NSString(string: appointment.title).boundingRect(with: appointmentTitleSize, options: .usesLineFragmentOrigin, attributes: appointmentTitleAttr, context: nil)
         
         return CGSize(width: collectionView.bounds.width, height: estimateTitleSize.height + 30 + 30)
     }

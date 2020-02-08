@@ -21,6 +21,7 @@
 		5B8F799223EDEFF7009F79EA /* RGBValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F799123EDEFF7009F79EA /* RGBValue.swift */; };
 		5B8F799423EE679B009F79EA /* AppointmentGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F799323EE679B009F79EA /* AppointmentGroup.swift */; };
 		5B8F799623EE683B009F79EA /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F799523EE683B009F79EA /* Appointment.swift */; };
+		5B8F799923EE6A59009F79EA /* AppointmentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F799823EE6A59009F79EA /* AppointmentsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		5B8F799123EDEFF7009F79EA /* RGBValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBValue.swift; sourceTree = "<group>"; };
 		5B8F799323EE679B009F79EA /* AppointmentGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentGroup.swift; sourceTree = "<group>"; };
 		5B8F799523EE683B009F79EA /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		5B8F799823EE6A59009F79EA /* AppointmentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		5B2AB99623EB4A8A005592F4 /* CalendarApp */ = {
 			isa = PBXGroup;
 			children = (
+				5B8F799723EE6A16009F79EA /* Services */,
 				5B8F799023EDEFDB009F79EA /* Models */,
 				5B8F798923ED1A4C009F79EA /* Controllers */,
 				5B4AF5F823EB56C100F584AB /* Views */,
@@ -121,6 +124,14 @@
 				5B8F799523EE683B009F79EA /* Appointment.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5B8F799723EE6A16009F79EA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5B8F799823EE6A59009F79EA /* AppointmentsService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +208,7 @@
 				5B8F799623EE683B009F79EA /* Appointment.swift in Sources */,
 				5B8F798823ED0E8E009F79EA /* AppointmentsTitle.swift in Sources */,
 				5B2AB99C23EB4A8A005592F4 /* AppointmentListVC.swift in Sources */,
+				5B8F799923EE6A59009F79EA /* AppointmentsService.swift in Sources */,
 				5B8F798F23EDE787009F79EA /* AppointmentGroupCell.swift in Sources */,
 				5B2AB99823EB4A8A005592F4 /* AppDelegate.swift in Sources */,
 				5B2AB99A23EB4A8A005592F4 /* SceneDelegate.swift in Sources */,
