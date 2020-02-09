@@ -45,6 +45,12 @@ class TaskItem: UIView {
         return label
     }()
     
+    lazy var rightView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override init(frame: CGRect) {
         self.iconBgColor = UIColor(red: 0.99, green: 0.96, blue: 0.88, alpha: 1.0)
         self.iconColor = UIColor(red: 0.74, green: 0.67, blue: 0.36, alpha: 1.0)
@@ -54,6 +60,7 @@ class TaskItem: UIView {
         
         self.addSubview(iconView)
         self.addSubview(textField)
+        self.addSubview(rightView)
         
         setupLayout()
 
@@ -77,7 +84,11 @@ class TaskItem: UIView {
             textField.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             textField.heightAnchor.constraint(equalToConstant: 30),
             textField.leftAnchor.constraint(equalTo: iconView.rightAnchor, constant: 20),
-            textField.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20)
+            
+            rightView.leftAnchor.constraint(equalTo: textField.rightAnchor, constant: 10),
+            rightView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
+            rightView.topAnchor.constraint(equalTo: iconView.topAnchor),
+            rightView.bottomAnchor.constraint(equalTo: iconView.bottomAnchor),
         ])
     }
     
@@ -87,4 +98,10 @@ class TaskItem: UIView {
         }
     }
     
+    func setBorder(with color: UIColor) {
+        self.layer.borderColor = color.cgColor
+        self.layer.borderWidth = 3
+        self.layer.cornerRadius = 15
+        self.layer.masksToBounds = true
+    }
 }

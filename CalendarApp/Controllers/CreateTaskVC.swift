@@ -62,10 +62,8 @@ class CreateTaskVC: UIViewController {
         self.groupItem.translatesAutoresizingMaskIntoConstraints = false
         self.groupItem.text = "Work"
         self.groupItem.iconBgColor = UIColor(red: 0.95, green: 0.92, blue: 0.99, alpha: 1.0)
-        self.groupItem.layer.borderColor = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.0).cgColor
-        self.groupItem.layer.borderWidth = 3
-        self.groupItem.layer.cornerRadius = 15
-        self.groupItem.layer.masksToBounds = true
+        self.groupItem.setBorder(with: UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.0))
+        addGroupItemIcon()
         self.view.addSubview(self.groupItem)
 
         // Notification
@@ -73,10 +71,8 @@ class CreateTaskVC: UIViewController {
         self.notificationItem.translatesAutoresizingMaskIntoConstraints = false
         self.notificationItem.text = "Remind me"
         self.notificationItem.iconBgColor = UIColor(red: 0.88, green: 0.99, blue: 0.97, alpha: 1.0)
-        self.notificationItem.layer.borderColor = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.0).cgColor
-        self.notificationItem.layer.borderWidth = 3
-        self.notificationItem.layer.cornerRadius = 15
-        self.notificationItem.layer.masksToBounds = true
+        self.notificationItem.setBorder(with: UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.0))
+        addNotificationSwitch()
         self.view.addSubview(self.notificationItem)
         
         // Create button
@@ -122,5 +118,34 @@ class CreateTaskVC: UIViewController {
     
     @objc private func tapCreateTask(sender: LargeBtn) {
         print("create task")
+    }
+    
+    private func addGroupItemIcon() {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = ">"
+        label.textAlignment = .right
+        
+        self.groupItem.rightView.addSubview(label)
+        NSLayoutConstraint.activate([
+            label.centerYAnchor.constraint(equalTo: self.groupItem.rightView.centerYAnchor),
+            label.heightAnchor.constraint(equalToConstant: 30),
+            label.widthAnchor.constraint(equalToConstant: 30),
+            label.rightAnchor.constraint(equalTo: self.groupItem.rightView.rightAnchor),
+            label.leftAnchor.constraint(equalTo: self.groupItem.rightView.leftAnchor),
+        ])
+    }
+    
+    private func addNotificationSwitch() {
+        let toggle = UISwitch()
+        toggle.translatesAutoresizingMaskIntoConstraints = false
+        toggle.onTintColor = UIColor(red: 0.42, green: 0.78, blue: 0.86, alpha: 1.0)
+        
+        self.notificationItem.rightView.addSubview(toggle)
+        NSLayoutConstraint.activate([
+            toggle.centerYAnchor.constraint(equalTo: self.notificationItem.rightView.centerYAnchor),
+            toggle.rightAnchor.constraint(equalTo: self.notificationItem.rightView.rightAnchor),
+            toggle.leftAnchor.constraint(equalTo: self.notificationItem.rightView.leftAnchor),
+        ])
     }
 }
