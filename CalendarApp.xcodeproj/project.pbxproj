@@ -13,7 +13,7 @@
 		5B2AB9A123EB4A8A005592F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AB9A023EB4A8A005592F4 /* Assets.xcassets */; };
 		5B2AB9A423EB4A8A005592F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2AB9A223EB4A8A005592F4 /* LaunchScreen.storyboard */; };
 		5B4AF5FA23EBB23F00F584AB /* AppointmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4AF5F923EBB23F00F584AB /* AppointmentCell.swift */; };
-		5B4AF5FC23EC9FB600F584AB /* NewTaskBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4AF5FB23EC9FB600F584AB /* NewTaskBtn.swift */; };
+		5B4AF5FC23EC9FB600F584AB /* LargeBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4AF5FB23EC9FB600F584AB /* LargeBtn.swift */; };
 		5B8F798823ED0E8E009F79EA /* AppointmentsTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F798723ED0E8E009F79EA /* AppointmentsTitle.swift */; };
 		5B8F798B23ED1A91009F79EA /* AppointmentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F798A23ED1A91009F79EA /* AppointmentsVC.swift */; };
 		5B8F798D23ED1C9C009F79EA /* AppointmentGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F798C23ED1C9C009F79EA /* AppointmentGroupVC.swift */; };
@@ -22,6 +22,9 @@
 		5B8F799423EE679B009F79EA /* AppointmentGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F799323EE679B009F79EA /* AppointmentGroup.swift */; };
 		5B8F799623EE683B009F79EA /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F799523EE683B009F79EA /* Appointment.swift */; };
 		5B8F799923EE6A59009F79EA /* AppointmentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F799823EE6A59009F79EA /* AppointmentsService.swift */; };
+		5B8F799B23EF7144009F79EA /* CreateTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F799A23EF7144009F79EA /* CreateTaskVC.swift */; };
+		5B8F799F23EF9012009F79EA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F799E23EF9012009F79EA /* CustomTextField.swift */; };
+		5B8F79A123EFB27C009F79EA /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F79A023EFB27C009F79EA /* TaskItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +36,7 @@
 		5B2AB9A323EB4A8A005592F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B2AB9A523EB4A8A005592F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B4AF5F923EBB23F00F584AB /* AppointmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentCell.swift; sourceTree = "<group>"; };
-		5B4AF5FB23EC9FB600F584AB /* NewTaskBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskBtn.swift; sourceTree = "<group>"; };
+		5B4AF5FB23EC9FB600F584AB /* LargeBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeBtn.swift; sourceTree = "<group>"; };
 		5B8F798723ED0E8E009F79EA /* AppointmentsTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsTitle.swift; sourceTree = "<group>"; };
 		5B8F798A23ED1A91009F79EA /* AppointmentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsVC.swift; sourceTree = "<group>"; };
 		5B8F798C23ED1C9C009F79EA /* AppointmentGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentGroupVC.swift; sourceTree = "<group>"; };
@@ -42,6 +45,9 @@
 		5B8F799323EE679B009F79EA /* AppointmentGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentGroup.swift; sourceTree = "<group>"; };
 		5B8F799523EE683B009F79EA /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		5B8F799823EE6A59009F79EA /* AppointmentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsService.swift; sourceTree = "<group>"; };
+		5B8F799A23EF7144009F79EA /* CreateTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskVC.swift; sourceTree = "<group>"; };
+		5B8F799E23EF9012009F79EA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		5B8F79A023EFB27C009F79EA /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +106,10 @@
 			children = (
 				5B8F798723ED0E8E009F79EA /* AppointmentsTitle.swift */,
 				5B4AF5F923EBB23F00F584AB /* AppointmentCell.swift */,
-				5B4AF5FB23EC9FB600F584AB /* NewTaskBtn.swift */,
+				5B4AF5FB23EC9FB600F584AB /* LargeBtn.swift */,
 				5B8F798E23EDE787009F79EA /* AppointmentGroupCell.swift */,
+				5B8F799E23EF9012009F79EA /* CustomTextField.swift */,
+				5B8F79A023EFB27C009F79EA /* TaskItem.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -112,6 +120,7 @@
 				5B2AB99B23EB4A8A005592F4 /* AppointmentListVC.swift */,
 				5B8F798A23ED1A91009F79EA /* AppointmentsVC.swift */,
 				5B8F798C23ED1C9C009F79EA /* AppointmentGroupVC.swift */,
+				5B8F799A23EF7144009F79EA /* CreateTaskVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -215,8 +224,11 @@
 				5B8F798B23ED1A91009F79EA /* AppointmentsVC.swift in Sources */,
 				5B8F799223EDEFF7009F79EA /* RGBValue.swift in Sources */,
 				5B4AF5FA23EBB23F00F584AB /* AppointmentCell.swift in Sources */,
+				5B8F79A123EFB27C009F79EA /* TaskItem.swift in Sources */,
 				5B8F799423EE679B009F79EA /* AppointmentGroup.swift in Sources */,
-				5B4AF5FC23EC9FB600F584AB /* NewTaskBtn.swift in Sources */,
+				5B4AF5FC23EC9FB600F584AB /* LargeBtn.swift in Sources */,
+				5B8F799B23EF7144009F79EA /* CreateTaskVC.swift in Sources */,
+				5B8F799F23EF9012009F79EA /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

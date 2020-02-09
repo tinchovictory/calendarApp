@@ -11,7 +11,7 @@ import UIKit
 class AppointmentListVC: UIViewController {
     
     private var appointmentsTable: UICollectionView!
-    private var newAppointmentBtn: NewTaskBtn!
+    private var newAppointmentBtn: LargeBtn!
     private var appointmentTitle: AppointmentsTitle!
     
     var appointmentsService: AppointmentsService!
@@ -34,8 +34,9 @@ class AppointmentListVC: UIViewController {
         self.appointmentsTable.showsVerticalScrollIndicator = false
         self.view.addSubview(appointmentsTable)
         
-        self.newAppointmentBtn = NewTaskBtn(type: .system)
+        self.newAppointmentBtn = LargeBtn(type: .system)
         self.newAppointmentBtn.translatesAutoresizingMaskIntoConstraints = false
+        self.newAppointmentBtn.setTitle("+ ADD NEW TASK", for: .normal)
         let groupColor = appointmentsService.appointmentGroup.color
         self.newAppointmentBtn.backgroundColor = UIColor(red: CGFloat(groupColor.r), green: CGFloat(groupColor.g), blue: CGFloat(groupColor.b), alpha: 1.0)
         self.newAppointmentBtn.addTarget(self, action: #selector(addNewTask(sender:)), for: .touchUpInside)
