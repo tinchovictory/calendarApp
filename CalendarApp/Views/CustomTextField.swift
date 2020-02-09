@@ -15,7 +15,7 @@ class CustomTextField: UITextField {
     var activeBorderColor: UIColor
     var fontColor: UIColor
     var activeFontColor: UIColor
-    
+
     private lazy var bottomBorder: UIView = {
         let border = UIView()
         border.translatesAutoresizingMaskIntoConstraints = false

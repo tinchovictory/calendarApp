@@ -22,6 +22,9 @@ class TaskItem: UIView {
         }
     }
     
+    var onTap: (() -> Void)?
+    
+    
     private lazy var iconView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -42,18 +45,21 @@ class TaskItem: UIView {
         return label
     }()
     
-
     override init(frame: CGRect) {
         self.iconBgColor = UIColor(red: 0.99, green: 0.96, blue: 0.88, alpha: 1.0)
         self.iconColor = UIColor(red: 0.74, green: 0.67, blue: 0.36, alpha: 1.0)
         self.text = "Friday 28, November"
-        
+
         super.init(frame: frame)
         
         self.addSubview(iconView)
         self.addSubview(textField)
         
         setupLayout()
+
+        // Tap action
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
+        self.addGestureRecognizer(tapGesture)
     }
     
     required init?(coder: NSCoder) {
@@ -73,6 +79,12 @@ class TaskItem: UIView {
             textField.leftAnchor.constraint(equalTo: iconView.rightAnchor, constant: 20),
             textField.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20)
         ])
+    }
+    
+    @objc private func tapGestureAction() {
+        if let onTapFunction = onTap {
+            onTapFunction()
+        }
     }
     
 }

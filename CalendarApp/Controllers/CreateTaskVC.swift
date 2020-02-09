@@ -47,6 +47,7 @@ class CreateTaskVC: UIViewController {
         self.dateItem.translatesAutoresizingMaskIntoConstraints = false
         self.dateItem.text = "Friday 28, November"
         self.dateItem.iconBgColor = UIColor(red: 0.99, green: 0.96, blue: 0.88, alpha: 1.0)
+        self.dateItem.onTap = { print("tap date") }
         self.view.addSubview(self.dateItem)
         
         // Time
