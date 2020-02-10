@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FontAwesome_swift
 
 class CreateTaskVC: UIViewController {
     
@@ -47,6 +48,9 @@ class CreateTaskVC: UIViewController {
         self.dateItem.translatesAutoresizingMaskIntoConstraints = false
         self.dateItem.text = "Friday 28, November"
         self.dateItem.iconBgColor = UIColor(red: 0.99, green: 0.96, blue: 0.88, alpha: 1.0)
+        self.dateItem.iconColor = UIColor(red: 0.69, green: 0.64, blue: 0.39, alpha: 1.0)
+        self.dateItem.icon.font = UIFont.fontAwesome(ofSize: 20, style: .solid)
+        self.dateItem.icon.text = String.fontAwesomeIcon(name: .calendar)
         self.dateItem.onTap = { print("tap date") }
         self.view.addSubview(self.dateItem)
         
@@ -55,6 +59,9 @@ class CreateTaskVC: UIViewController {
         self.timeItem.translatesAutoresizingMaskIntoConstraints = false
         self.timeItem.text = "1:00 pm - 3:30 pm"
         self.timeItem.iconBgColor = UIColor(red: 0.98, green: 0.94, blue: 0.93, alpha: 1.0)
+        self.timeItem.iconColor = UIColor(red: 0.62, green: 0.42, blue: 0.45, alpha: 1.0)
+        self.timeItem.icon.font = UIFont.fontAwesome(ofSize: 20, style: .solid)
+        self.timeItem.icon.text = String.fontAwesomeIcon(name: .clock)
         self.view.addSubview(self.timeItem)
         
         // Group
@@ -62,6 +69,9 @@ class CreateTaskVC: UIViewController {
         self.groupItem.translatesAutoresizingMaskIntoConstraints = false
         self.groupItem.text = "Work"
         self.groupItem.iconBgColor = UIColor(red: 0.95, green: 0.92, blue: 0.99, alpha: 1.0)
+        self.groupItem.iconColor = UIColor(red: 0.55, green: 0.46, blue: 0.71, alpha: 1.0)
+        self.groupItem.icon.font = UIFont.fontAwesome(ofSize: 20, style: .solid)
+        self.groupItem.icon.text = String.fontAwesomeIcon(name: .suitcase)
         self.groupItem.setBorder(with: UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.0))
         addGroupItemIcon()
         self.view.addSubview(self.groupItem)
@@ -71,6 +81,9 @@ class CreateTaskVC: UIViewController {
         self.notificationItem.translatesAutoresizingMaskIntoConstraints = false
         self.notificationItem.text = "Remind me"
         self.notificationItem.iconBgColor = UIColor(red: 0.88, green: 0.99, blue: 0.97, alpha: 1.0)
+        self.notificationItem.iconColor = UIColor(red: 0.52, green: 0.71, blue: 0.73, alpha: 1.0)
+        self.notificationItem.icon.font = UIFont.fontAwesome(ofSize: 20, style: .solid)
+        self.notificationItem.icon.text = String.fontAwesomeIcon(name: .bell)
         self.notificationItem.setBorder(with: UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.0))
         addNotificationSwitch()
         self.view.addSubview(self.notificationItem)
@@ -123,8 +136,10 @@ class CreateTaskVC: UIViewController {
     private func addGroupItemIcon() {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = ">"
         label.textAlignment = .right
+        label.font = UIFont.fontAwesome(ofSize: 20, style: .solid)
+        label.text = String.fontAwesomeIcon(name: .chevronRight)
+        label.textColor = UIColor(red: 0.34, green: 0.34, blue: 0.35, alpha: 1.0)
         
         self.groupItem.rightView.addSubview(label)
         NSLayoutConstraint.activate([

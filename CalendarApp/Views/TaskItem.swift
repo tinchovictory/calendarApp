@@ -15,7 +15,11 @@ class TaskItem: UIView {
             iconView.backgroundColor = iconBgColor
         }
     }
-    var iconColor: UIColor!
+    var iconColor: UIColor! {
+        didSet {
+            icon.textColor = iconColor
+        }
+    }
     var text: String! {
         didSet {
             textField.text = text
@@ -51,6 +55,14 @@ class TaskItem: UIView {
         return view
     }()
     
+    lazy var icon: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = iconColor
+
+        return label
+    }()
+    
     override init(frame: CGRect) {
         self.iconBgColor = UIColor(red: 0.99, green: 0.96, blue: 0.88, alpha: 1.0)
         self.iconColor = UIColor(red: 0.74, green: 0.67, blue: 0.36, alpha: 1.0)
@@ -59,6 +71,7 @@ class TaskItem: UIView {
         super.init(frame: frame)
         
         self.addSubview(iconView)
+        self.iconView.addSubview(icon)
         self.addSubview(textField)
         self.addSubview(rightView)
         
@@ -89,6 +102,9 @@ class TaskItem: UIView {
             rightView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
             rightView.topAnchor.constraint(equalTo: iconView.topAnchor),
             rightView.bottomAnchor.constraint(equalTo: iconView.bottomAnchor),
+            
+            icon.centerXAnchor.constraint(equalTo: iconView.centerXAnchor),
+            icon.centerYAnchor.constraint(equalTo: iconView.centerYAnchor),
         ])
     }
     
