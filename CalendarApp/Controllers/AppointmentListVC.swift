@@ -65,7 +65,9 @@ class AppointmentListVC: UIViewController {
     
     
     @objc private func addNewTask(sender: UIButton) {
-        print("Add new task")
+//        print("Add new task")
+        let createTaskVC = CreateTaskVC()
+        self.present(createTaskVC, animated: true, completion: nil)
     }
 
     func reloadAppointmentsList() {

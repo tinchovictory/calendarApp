@@ -130,7 +130,8 @@ class CreateTaskVC: UIViewController {
     }
     
     @objc private func tapCreateTask(sender: LargeBtn) {
-        print("create task")
+//        print("create task")
+        self.dismiss(animated: true, completion: nil)
     }
     
     private func addGroupItemIcon() {
