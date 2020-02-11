@@ -79,6 +79,7 @@ class TaskItem: UIView {
 
         // Tap action
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
+        tapGesture.delegate = self
         self.addGestureRecognizer(tapGesture)
     }
     
@@ -119,5 +120,14 @@ class TaskItem: UIView {
         self.layer.borderWidth = 3
         self.layer.cornerRadius = 15
         self.layer.masksToBounds = true
+    }
+}
+
+extension TaskItem: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if self.onTap == nil {
+            return false
+        }
+        return true
     }
 }

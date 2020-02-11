@@ -11,6 +11,8 @@ import FontAwesome_swift
 
 class CreateTaskVC: UIViewController {
     
+    var appointmentsService: AppointmentsService!
+    
     private var dateItem: TaskItem!
     private var timeItem: TaskItem!
     private var groupItem: TaskItem!
@@ -22,6 +24,9 @@ class CreateTaskVC: UIViewController {
         // Dissmiss keyboard on tap outside text field
         let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         self.view.addGestureRecognizer(tapGesture)
+        
+        // Add close btn
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeModal))
     }
 
     override func loadView() {
@@ -74,6 +79,10 @@ class CreateTaskVC: UIViewController {
         self.groupItem.icon.text = String.fontAwesomeIcon(name: .suitcase)
         self.groupItem.setBorder(with: UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.0))
         addGroupItemIcon()
+        self.groupItem.onTap = { [weak self] in
+            guard let self = self else { return }
+            self.selectAppointmentsGroups()
+        }
         self.view.addSubview(self.groupItem)
 
         // Notification
@@ -130,8 +139,7 @@ class CreateTaskVC: UIViewController {
     }
     
     @objc private func tapCreateTask(sender: LargeBtn) {
-//        print("create task")
-        self.dismiss(animated: true, completion: nil)
+        closeModal()
     }
     
     private func addGroupItemIcon() {
@@ -163,5 +171,15 @@ class CreateTaskVC: UIViewController {
             toggle.rightAnchor.constraint(equalTo: self.notificationItem.rightView.rightAnchor),
             toggle.leftAnchor.constraint(equalTo: self.notificationItem.rightView.leftAnchor),
         ])
+    }
+    
+    @objc private func closeModal() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
+    private func selectAppointmentsGroups() {
+        let selectAppointmentGroupVC = SelectAppointmentGroupVC()
+        selectAppointmentGroupVC.appointmentsService = self.appointmentsService
+        self.navigationController?.pushViewController(selectAppointmentGroupVC, animated: true)
     }
 }
