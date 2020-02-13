@@ -8,6 +8,7 @@
 
 import UIKit
 import FontAwesome_swift
+import ActionSheet
 
 class CreateTaskVC: UIViewController {
     
@@ -56,7 +57,10 @@ class CreateTaskVC: UIViewController {
         self.dateItem.iconColor = UIColor(red: 0.69, green: 0.64, blue: 0.39, alpha: 1.0)
         self.dateItem.icon.font = UIFont.fontAwesome(ofSize: 20, style: .solid)
         self.dateItem.icon.text = String.fontAwesomeIcon(name: .calendar)
-        self.dateItem.onTap = { print("tap date") }
+        self.dateItem.onTap = { [weak self] in
+            guard let self = self else {return}
+            self.selectDate()
+        }
         self.view.addSubview(self.dateItem)
         
         // Time
@@ -181,5 +185,25 @@ class CreateTaskVC: UIViewController {
         let selectAppointmentGroupVC = SelectAppointmentGroupVC()
         selectAppointmentGroupVC.appointmentsService = self.appointmentsService
         self.navigationController?.pushViewController(selectAppointmentGroupVC, animated: true)
+    }
+    
+    private func selectDate() {
+        // Debug
+        let view = UIView()
+        view.backgroundColor = .white
+        let label = UILabel()
+        label.text = "Calendar"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(label)
+        
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+            label.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -150),
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        ])
+        
+        
+        let actionSheet = ActionSheet(target: self, contentView: view)
+        actionSheet.present()
     }
 }
