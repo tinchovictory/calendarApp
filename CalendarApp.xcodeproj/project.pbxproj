@@ -28,6 +28,8 @@
 		5B9A242923F1D2C10094967B /* SelectAppointmentGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A242823F1D2C10094967B /* SelectAppointmentGroupVC.swift */; };
 		5B9A242C23F1E3FF0094967B /* SelectAppointmentGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9A242B23F1E3FF0094967B /* SelectAppointmentGroupCell.swift */; };
 		5BD320CD23FC676D00945AD4 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD320CC23FC676D00945AD4 /* CalendarVC.swift */; };
+		5BD320CF23FC6BDC00945AD4 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD320CE23FC6BDC00945AD4 /* CalendarCell.swift */; };
+		5BD320D123FC836B00945AD4 /* CalendarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD320D023FC836B00945AD4 /* CalendarHeader.swift */; };
 		657C4580AF9999CCC2E052C8 /* Pods_CalendarApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2680D88FD76A48919BC78E6 /* Pods_CalendarApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		5B9A242823F1D2C10094967B /* SelectAppointmentGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAppointmentGroupVC.swift; sourceTree = "<group>"; };
 		5B9A242B23F1E3FF0094967B /* SelectAppointmentGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAppointmentGroupCell.swift; sourceTree = "<group>"; };
 		5BD320CC23FC676D00945AD4 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
+		5BD320CE23FC6BDC00945AD4 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		5BD320D023FC836B00945AD4 /* CalendarHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeader.swift; sourceTree = "<group>"; };
 		62BBE07D2EEF979B000015CF /* Pods-CalendarApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarApp.debug.xcconfig"; path = "Target Support Files/Pods-CalendarApp/Pods-CalendarApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A2680D88FD76A48919BC78E6 /* Pods_CalendarApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalendarApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -132,6 +136,8 @@
 				5B8F799E23EF9012009F79EA /* CustomTextField.swift */,
 				5B8F79A023EFB27C009F79EA /* TaskItem.swift */,
 				5B9A242B23F1E3FF0094967B /* SelectAppointmentGroupCell.swift */,
+				5BD320CE23FC6BDC00945AD4 /* CalendarCell.swift */,
+				5BD320D023FC836B00945AD4 /* CalendarHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 				5B8F798F23EDE787009F79EA /* AppointmentGroupCell.swift in Sources */,
 				5B9A242C23F1E3FF0094967B /* SelectAppointmentGroupCell.swift in Sources */,
 				5B2AB99823EB4A8A005592F4 /* AppDelegate.swift in Sources */,
+				5BD320D123FC836B00945AD4 /* CalendarHeader.swift in Sources */,
 				5B2AB99A23EB4A8A005592F4 /* SceneDelegate.swift in Sources */,
 				5B8F798B23ED1A91009F79EA /* AppointmentsVC.swift in Sources */,
 				5B8F799223EDEFF7009F79EA /* RGBValue.swift in Sources */,
@@ -309,6 +316,7 @@
 				5B8F799B23EF7144009F79EA /* CreateTaskVC.swift in Sources */,
 				5B8F799F23EF9012009F79EA /* CustomTextField.swift in Sources */,
 				5BD320CD23FC676D00945AD4 /* CalendarVC.swift in Sources */,
+				5BD320CF23FC6BDC00945AD4 /* CalendarCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

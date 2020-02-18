@@ -1,21 +1,25 @@
 PODS:
   - ActionSheet (2.0.0)
   - FontAwesome.swift (1.8.3)
+  - JTAppleCalendar (7.1.8)
 
 DEPENDENCIES:
   - ActionSheet (~> 2.0.0)
   - FontAwesome.swift
+  - JTAppleCalendar (~> 7.1)
 
 SPEC REPOS:
   "git@github.com:tinchovictory/privatePods.git":
     - ActionSheet
   https://github.com/CocoaPods/Specs.git:
     - FontAwesome.swift
+    - JTAppleCalendar
 
 SPEC CHECKSUMS:
   ActionSheet: 14e8c6543dea7eb6f02e7a1c48f4fce03055b86e
   FontAwesome.swift: 2a3235131a6caffc6b2ccba318e94d793b2fd342
+  JTAppleCalendar: b7fb40852f5f319fe55c8ec3861f1de0edc99cc8
 
-PODFILE CHECKSUM: cd1cf6781c9288ff267f489bbd81b6bf77d775ac
+PODFILE CHECKSUM: 5ecfab19a922e59fccff0952ae1d9d9ff2c78535
 
 COCOAPODS: 1.8.4

@@ -190,6 +190,10 @@ class CreateTaskVC: UIViewController {
     private func selectDate() {
         let calendarVC = CalendarVC()
         let actionSheet = ActionSheet(target: self, contentViewController: calendarVC)
+        calendarVC.dismissHandler = { selectedDate in
+            actionSheet.dismiss()
+            print("Selected date \(selectedDate)")
+        }
         actionSheet.present()
     }
 }
