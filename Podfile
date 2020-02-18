@@ -9,6 +9,6 @@ target 'CalendarApp' do
 
   # Pods for CalendarApp
   pod 'FontAwesome.swift'
-  pod 'ActionSheet'
+  pod 'ActionSheet', '~>2.0.0'
 
 end

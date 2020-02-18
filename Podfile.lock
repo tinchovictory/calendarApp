@@ -1,21 +1,21 @@
 PODS:
-  - ActionSheet (1.0.0)
+  - ActionSheet (2.0.0)
   - FontAwesome.swift (1.8.3)
 
 DEPENDENCIES:
-  - ActionSheet
+  - ActionSheet (~> 2.0.0)
   - FontAwesome.swift
 
 SPEC REPOS:
   "git@github.com:tinchovictory/privatePods.git":
     - ActionSheet
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - FontAwesome.swift
 
 SPEC CHECKSUMS:
-  ActionSheet: e0d4851b8324d739ae97c4ba65163f25e8a9d997
+  ActionSheet: 14e8c6543dea7eb6f02e7a1c48f4fce03055b86e
   FontAwesome.swift: 2a3235131a6caffc6b2ccba318e94d793b2fd342
 
-PODFILE CHECKSUM: 6426770be170c5152dc1241e3d6517b9a4680c1e
+PODFILE CHECKSUM: cd1cf6781c9288ff267f489bbd81b6bf77d775ac
 
 COCOAPODS: 1.8.4

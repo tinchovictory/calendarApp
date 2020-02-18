@@ -188,22 +188,8 @@ class CreateTaskVC: UIViewController {
     }
     
     private func selectDate() {
-        // Debug
-        let view = UIView()
-        view.backgroundColor = .white
-        let label = UILabel()
-        label.text = "Calendar"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(label)
-        
-        NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
-            label.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -150),
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        ])
-        
-        
-        let actionSheet = ActionSheet(target: self, contentView: view)
+        let calendarVC = CalendarVC()
+        let actionSheet = ActionSheet(target: self, contentViewController: calendarVC)
         actionSheet.present()
     }
 }
