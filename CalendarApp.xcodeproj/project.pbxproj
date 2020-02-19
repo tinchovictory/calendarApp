@@ -30,8 +30,19 @@
 		5BD320CD23FC676D00945AD4 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD320CC23FC676D00945AD4 /* CalendarVC.swift */; };
 		5BD320CF23FC6BDC00945AD4 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD320CE23FC6BDC00945AD4 /* CalendarCell.swift */; };
 		5BD320D123FC836B00945AD4 /* CalendarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD320D023FC836B00945AD4 /* CalendarHeader.swift */; };
+		5BD320D923FCDE8E00945AD4 /* CalendarAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD320D823FCDE8E00945AD4 /* CalendarAppTests.swift */; };
 		657C4580AF9999CCC2E052C8 /* Pods_CalendarApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2680D88FD76A48919BC78E6 /* Pods_CalendarApp.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5BD320DB23FCDE8E00945AD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B2AB98C23EB4A8A005592F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B2AB99323EB4A8A005592F4;
+			remoteInfo = CalendarApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4F14DC6D2D9B6D46C4D759DC /* Pods-CalendarApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarApp.release.xcconfig"; path = "Target Support Files/Pods-CalendarApp/Pods-CalendarApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -60,6 +71,9 @@
 		5BD320CC23FC676D00945AD4 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		5BD320CE23FC6BDC00945AD4 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		5BD320D023FC836B00945AD4 /* CalendarHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeader.swift; sourceTree = "<group>"; };
+		5BD320D623FCDE8E00945AD4 /* CalendarAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalendarAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BD320D823FCDE8E00945AD4 /* CalendarAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAppTests.swift; sourceTree = "<group>"; };
+		5BD320DA23FCDE8E00945AD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62BBE07D2EEF979B000015CF /* Pods-CalendarApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarApp.debug.xcconfig"; path = "Target Support Files/Pods-CalendarApp/Pods-CalendarApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A2680D88FD76A48919BC78E6 /* Pods_CalendarApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalendarApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -70,6 +84,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				657C4580AF9999CCC2E052C8 /* Pods_CalendarApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BD320D323FCDE8E00945AD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +110,7 @@
 			children = (
 				5B4AF5F723EB562300F584AB /* SupportingFiles */,
 				5B2AB99623EB4A8A005592F4 /* CalendarApp */,
+				5BD320D723FCDE8E00945AD4 /* CalendarAppTests */,
 				5B2AB99523EB4A8A005592F4 /* Products */,
 				F15A61981C163DC2ED74EF70 /* Pods */,
 				0EE899DCA2F0F6D9988E1310 /* Frameworks */,
@@ -99,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				5B2AB99423EB4A8A005592F4 /* CalendarApp.app */,
+				5BD320D623FCDE8E00945AD4 /* CalendarAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,6 +196,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		5BD320D723FCDE8E00945AD4 /* CalendarAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				5BD320D823FCDE8E00945AD4 /* CalendarAppTests.swift */,
+				5BD320DA23FCDE8E00945AD4 /* Info.plist */,
+			);
+			path = CalendarAppTests;
+			sourceTree = "<group>";
+		};
 		F15A61981C163DC2ED74EF70 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +236,24 @@
 			productReference = 5B2AB99423EB4A8A005592F4 /* CalendarApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5BD320D523FCDE8E00945AD4 /* CalendarAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BD320DF23FCDE8E00945AD4 /* Build configuration list for PBXNativeTarget "CalendarAppTests" */;
+			buildPhases = (
+				5BD320D223FCDE8E00945AD4 /* Sources */,
+				5BD320D323FCDE8E00945AD4 /* Frameworks */,
+				5BD320D423FCDE8E00945AD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BD320DC23FCDE8E00945AD4 /* PBXTargetDependency */,
+			);
+			name = CalendarAppTests;
+			productName = CalendarAppTests;
+			productReference = 5BD320D623FCDE8E00945AD4 /* CalendarAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -216,6 +266,10 @@
 				TargetAttributes = {
 					5B2AB99323EB4A8A005592F4 = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					5BD320D523FCDE8E00945AD4 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 5B2AB99323EB4A8A005592F4;
 					};
 				};
 			};
@@ -233,6 +287,7 @@
 			projectRoot = "";
 			targets = (
 				5B2AB99323EB4A8A005592F4 /* CalendarApp */,
+				5BD320D523FCDE8E00945AD4 /* CalendarAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -244,6 +299,13 @@
 			files = (
 				5B2AB9A423EB4A8A005592F4 /* LaunchScreen.storyboard in Resources */,
 				5B2AB9A123EB4A8A005592F4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BD320D423FCDE8E00945AD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +382,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BD320D223FCDE8E00945AD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BD320D923FCDE8E00945AD4 /* CalendarAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5BD320DC23FCDE8E00945AD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B2AB99323EB4A8A005592F4 /* CalendarApp */;
+			targetProxy = 5BD320DB23FCDE8E00945AD4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5B2AB9A223EB4A8A005592F4 /* LaunchScreen.storyboard */ = {
@@ -486,6 +564,46 @@
 			};
 			name = Release;
 		};
+		5BD320DD23FCDE8E00945AD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7A47MGPH88;
+				INFOPLIST_FILE = CalendarAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.victory.CalendarAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalendarApp.app/CalendarApp";
+			};
+			name = Debug;
+		};
+		5BD320DE23FCDE8E00945AD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7A47MGPH88;
+				INFOPLIST_FILE = CalendarAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.victory.CalendarAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalendarApp.app/CalendarApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -503,6 +621,15 @@
 			buildConfigurations = (
 				5B2AB9A923EB4A8A005592F4 /* Debug */,
 				5B2AB9AA23EB4A8A005592F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BD320DF23FCDE8E00945AD4 /* Build configuration list for PBXNativeTarget "CalendarAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BD320DD23FCDE8E00945AD4 /* Debug */,
+				5BD320DE23FCDE8E00945AD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
