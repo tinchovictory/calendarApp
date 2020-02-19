@@ -1,6 +1,6 @@
 language: swift
 osx_image: xcode11.3
 xcode_workspace: CalendarApp.xcworkspace
-# xcode_scheme: MyNewProjectTests
+xcode_scheme: CalendarApp
 xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone 11 Pro
 cache: cocoapods
